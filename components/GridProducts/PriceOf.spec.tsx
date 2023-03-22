@@ -1,6 +1,6 @@
+import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { PriceOf } from "./index";
-import "@testing-library/jest-dom";
 
 describe("Price Of", () => {
   it("renders a heading", () => {

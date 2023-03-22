@@ -1,11 +1,14 @@
 "use client";
 import { Button } from "@components/Button";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function PageHome() {
-  const location = window.location.host;
-
   const { push } = useRouter();
+
+  const [location, setLocation] = useState<string>();
+
+  useEffect(() => setLocation(window.location.host), []);
 
   return (
     <section className="container p-9 text-center">
@@ -23,6 +26,24 @@ export default function PageHome() {
       <Button
         size="xs"
         variant="secondary"
+        onClick={() => push(`//acme.${location}`)}
+        type="button"
+      >
+        {`acme.${location}`}
+      </Button>
+      <br />
+      <Button
+        size="xs"
+        variant="alert"
+        onClick={() => push(`//acme.${location}`)}
+        type="button"
+      >
+        {`acme.${location}`}
+      </Button>
+      <br />
+      <Button
+        size="xs"
+        variant="danger"
         onClick={() => push(`//acme.${location}`)}
         type="button"
       >

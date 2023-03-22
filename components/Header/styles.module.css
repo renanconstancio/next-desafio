@@ -3,7 +3,8 @@
 }
 
 .header-first-section {
-  @apply bg-gray-50 font-100 text-sm px-4 py-2 md:px-0
+  @apply bg-gray-50 text-sm px-4 py-2 md:px-0;
+  font-weight: 100;
 }
 
 .header-first-section p {

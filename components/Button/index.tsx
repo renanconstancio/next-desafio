@@ -4,7 +4,7 @@ import styles from "./styles.module.css";
 
 export function Button({
   children,
-  variant = "btn-primary",
+  variant = "primary",
   size = "md",
   ...rest
 }: ButtonType) {
