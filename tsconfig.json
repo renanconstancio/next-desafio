@@ -20,6 +20,8 @@
       }
     ],
     "paths": {
+      "@context/*": ["./context/*"],
+      "@providers/*": ["./providers/*"],
       "@components/*": ["./components/*"],
       "@utils/*": ["./utils/*"]
     }

@@ -1,0 +1,23 @@
+.header {
+  @apply h-[120px] md:h-auto bg-white
+}
+
+.header-first-section {
+  @apply bg-gray-50 font-100 text-sm px-4 py-2 md:px-0
+}
+
+.header-first-section p {
+  @apply container flex justify-between items-center flex-wrap
+}
+
+.header-first-secondary {
+  @apply container flex justify-between items-center flex-wrap fixed md:relative px-4 py-2 md:px-0 top-0 left-0 right-0 bg-white
+}
+
+.header-first-secondary aside {
+  @apply basis-1/3 text-center
+}
+
+.header-first-secondary aside:last-of-type{
+  @apply flex justify-evenly items-center
+}

@@ -6,10 +6,8 @@ describe("Price Of", () => {
   it("renders a heading", () => {
     render(<PriceOf price="welcome to next" />);
 
-    const heading = screen.getByRole("none", {
-      name: /welcome to next/i,
-    });
+    screen.getByText("welcome to next");
 
-    expect(heading).toBeInTheDocument();
+    // expect(screen).toHaveTextContent("welcome to next");
   });
 });

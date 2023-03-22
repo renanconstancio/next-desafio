@@ -1,4 +1,3 @@
-"use client";
 import { Header } from "@components/Header";
 import { GridProducts } from "@components/GridProducts";
 
@@ -16,7 +15,7 @@ async function getProducts(): Promise<Products[]> {
   return resp.json();
 }
 
-export default async function Page() {
+export default async function PageSubHome() {
   const settingData = await getSettings();
   const productsData = await getProducts();
 
@@ -25,11 +24,10 @@ export default async function Page() {
   return (
     <>
       <Header setting={setting} />
-      {/*
 
-      <section className="container pb-12">
+      <section className="container px-4 py-2 md:px-0 pb-12">
         <GridProducts listItems={products.sort((a) => a.rating).slice(0, 10)} />
-      </section> */}
+      </section>
 
       <Footer />
     </>

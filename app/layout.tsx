@@ -6,6 +6,7 @@ export const metadata = {
 };
 
 import { Lato } from "next/font/google";
+import SearchProvider from "@context/searchContext";
 
 const lato = Lato({
   variable: "--font-lato",
@@ -20,7 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br" className={`${lato.variable}`}>
-      <body>{children}</body>
+      <body>
+        <SearchProvider>{children}</SearchProvider>
+      </body>
     </html>
   );
 }

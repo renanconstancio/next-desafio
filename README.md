@@ -15,3 +15,7 @@ npm run dev -H 192.168.1.2
 ```
 
 Agora, abra o link a seguir [http://localhost:3000](http://localhost:3000) e você deve ver uma página web.
+
+Você poderá também ver outra pagina em um subdominio, como se fosse um saas
+
+Tente executar [http://acme.localhost:3000](http://acme.localhost:3000)

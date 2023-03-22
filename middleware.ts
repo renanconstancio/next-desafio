@@ -21,10 +21,10 @@ export default async function middleware(req: NextRequest) {
   // the pages/sites folder and its respective contents.
   if (url.pathname.startsWith(`/_sites`)) {
     url.pathname = `/404`;
-  } else {
-    // console.log('URL 2', req.nextUrl.href)
-    // rewrite to the current subdomain under the pages/sites folder
+  } else if (currentHost !== hostname) {
     url.pathname = `/_sites/${currentHost}${url.pathname}`;
+  } else {
+    url.pathname = `/${url.pathname}`;
   }
 
   return NextResponse.rewrite(url);

@@ -1,0 +1,33 @@
+.btn {
+  @apply font-bold px-4 py-2 text-base uppercase shadow hover:shadow-lg outline-none focus:outline-none mb-4 ease-linear transition-all duration-150
+}
+
+.btn.xl {
+  @apply px-8 py-4 text-xl
+}
+.btn.lg {
+  @apply px-6 py-3 text-lg
+}
+.btn.md {
+  @apply px-4 py-2
+}
+.btn.sm {
+  @apply px-4 py-2 text-sm
+}
+.btn.xs {
+  @apply px-1 py-0.5 text-[10px]
+}
+
+
+
+.btn.primary {
+ @apply bg-slate-500 text-white active:bg-slate-600
+}
+
+.btn.secondary {
+ @apply bg-gray-500 text-white active:bg-gray-600
+}
+
+.btn.primary {
+ @apply bg-lime-600 text-white active:bg-lime-700
+}

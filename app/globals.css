@@ -35,4 +35,5 @@
   .icon-svg-animated {
     @apply fill-red-600 transition-colors hover:duration-200 hover:fill-red-300 w-7 cursor-pointer
   }
+
 }
