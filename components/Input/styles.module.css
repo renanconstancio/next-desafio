@@ -1,0 +1,10 @@
+.input {
+  @apply bg-white rounded-3xl overflow-hidden border
+}
+.input input {
+  @apply bg-transparent outline-none border-none h-full py-3 px-6
+}
+
+.input.active {
+  @apply transition-colors ease-in-out delay-150 border-purple-strong
+}

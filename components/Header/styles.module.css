@@ -2,11 +2,6 @@
   @apply h-[120px] md:h-auto bg-white
 }
 
-.header-first-section {
-  @apply bg-gray-50 text-sm px-4 py-2 md:px-0;
-  font-weight: 100;
-}
-
 .header-first-section p {
   @apply container flex justify-between items-center flex-wrap
 }

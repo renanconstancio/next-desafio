@@ -14,31 +14,62 @@ type ListItems = {
 
 export default function GridProducts({ listItems }: ListItems) {
   return (
-    <ul className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-      {listItems?.map((item, k) => (
-        <li key={k}>
-          <a href="">
-            <article className="text-center">
-              <Image
-                src={item.images[0]}
-                loading="lazy"
-                alt="images"
-                className="w-full"
-                width={300}
-                height={300}
-              />
+    <>
+      <section className="bg-white rounded-3xl p-7">
+        <table className="table-auto w-full">
+          <thead>
+            <tr>
+              <th className="text-start">Titulo</th>
+              <th className="text-center">Caegoria</th>
+              <th className="text-center">Preço</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+              <td className="text-center">Malcolm Lockyer</td>
+              <td className="text-center">1961</td>
+            </tr>
+            <tr>
+              <td>Witchy Woman</td>
+              <td className="text-center">The Eagles</td>
+              <td className="text-center">1972</td>
+            </tr>
+            <tr>
+              <td>Shining Star</td>
+              <td className="text-center">Earth, Wind, and Fire</td>
+              <td className="text-center">1975</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      {/*
+      <ul className="flex flex-col">
+        {listItems?.map((item, k) => (
+          <li key={k}>
+            <a href="">
+              <article className="flex flex-row">
+                <Image
+                  src={item.images[0]}
+                  loading="lazy"
+                  alt="images"
+                  width={75}
+                  height={75}
+                />
+                <aside>
+                  <H3Title title={item.title} />
+                  <StarRating ratingStar={item.rating} />
+                </aside>
+                <aside>
+                  <PriceOf price="" />
 
-              <StarRating ratingStar={item.rating} />
-
-              <H3Title title={item.title} />
-
-              <PriceOf price="" />
-
-              <SalePrice price={`Por ${maskPrice(item.price)}`} />
-            </article>
-          </a>
-        </li>
-      ))}
-    </ul>
+                  <SalePrice price={`Por ${maskPrice(item.price)}`} />
+                </aside>
+              </article>
+            </a>
+          </li>
+        ))}
+      </ul> */}
+    </>
   );
 }

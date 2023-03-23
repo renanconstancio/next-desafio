@@ -11,16 +11,17 @@
   }
 
   body {
-    font-family: var(--font-lato);
+    font-family: var(--font-overpass);
+    @apply bg-gray-ligth text-gray-regular
   }
 
   .font-100 {
-    font-family: var(--font-lato);
+    font-family: var(--font-overpass);
     font-weight: 100;
   }
 
   .font-900 {
-    font-family: var(--font-lato);
+    font-family: var(--font-overpass);
     font-weight: 900;
   }
 
@@ -33,7 +34,7 @@
   }
 
   .icon-svg-animated {
-    @apply fill-red-600 transition-colors hover:duration-200 hover:fill-red-300 w-7 cursor-pointer
+    @apply fill-purple-strong transition-colors hover:duration-200 hover:fill-purple-ligth w-7 cursor-pointer
   }
 
 }

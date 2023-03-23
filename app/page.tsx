@@ -12,42 +12,15 @@ export default function PageHome() {
 
   return (
     <section className="container p-9 text-center">
-      <h1 className="font-lato text-3xl">Não há nada por aqui!!!</h1>
-      <p>Que tal você tentar algo como</p>
+      <h1 className="font-lato text-3xl">Bem Vindo!!!</h1>
+      <p>Para acessar, clique no link abaixo</p>
       <Button
-        size="xs"
+        size="lg"
         variant="primary"
-        onClick={() => push(`//acme.${location}`)}
+        onClick={() => push(`//sistema.${location}`)}
         type="button"
       >
-        {`acme.${location}`}
-      </Button>
-      <br />
-      <Button
-        size="xs"
-        variant="secondary"
-        onClick={() => push(`//acme.${location}`)}
-        type="button"
-      >
-        {`acme.${location}`}
-      </Button>
-      <br />
-      <Button
-        size="xs"
-        variant="alert"
-        onClick={() => push(`//acme.${location}`)}
-        type="button"
-      >
-        {`acme.${location}`}
-      </Button>
-      <br />
-      <Button
-        size="xs"
-        variant="danger"
-        onClick={() => push(`//acme.${location}`)}
-        type="button"
-      >
-        {`acme.${location}`}
+        acessar sistema
       </Button>
     </section>
   );

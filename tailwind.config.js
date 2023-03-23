@@ -16,45 +16,25 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: {
-          100: "#037145",
-          200: "#005f35",
-          50: "#0ba675",
-        },
-        secondary: {
-          100: "#90979e",
-          200: "#798086",
-          50: "#bfc6cd",
-        },
-        alert: {
-          100: "#f3eca4",
-          200: "#efe68b",
-          50: "#f7f3bd",
-        },
-        warning: {
-          100: "#f3eca4",
-          200: "#efe68b",
-          50: "#f7f3bd",
-        },
-        info: {
-          100: "#84cae7",
-          200: "#71b7d4",
-          50: "#97dcfa",
-        },
-        danger: {
-          100: "#d12b4e",
-          200: "#bc1d3f",
-          50: "#e6395d",
-        },
-        buy: {
-          100: "#cb46e5 ",
-          200: "#b128d8",
-          50: "#e565f2",
-        },
         ...defaultTheme.colors,
+        purple: {
+          ligth: "#7652dc",
+          strong: "#6149cd",
+        },
+        gray: {
+          ligth: "#e7e9f5",
+          regular: "#5f616e"
+        },
+        rose: {
+          ligth: "#ff7c9f",
+          strong: "#f96767"
+        },
+        yellow: {
+          regular: "#f9d967"
+        },
       },
       fontFamily: {
-        "lato": 'var(--font-lato)',
+        "overpass": 'var(--font-overpass)',
       }
     },
   },

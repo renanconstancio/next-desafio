@@ -1,5 +1,5 @@
 .btn {
-  @apply font-bold px-4 py-2 text-base uppercase shadow hover:shadow-lg outline-none focus:outline-none mb-4 ease-linear transition-all duration-150
+  @apply font-bold px-4 py-2 text-base uppercase shadow hover:shadow-lg outline-none focus:outline-none mb-4 ease-linear transition-all duration-150 rounded-3xl font-overpass
 }
 
 
@@ -21,25 +21,9 @@
 
 
 .btn.primary {
- @apply bg-primary-100 text-white active:bg-primary-200
+ @apply bg-gradient-to-r from-purple-ligth to-purple-strong text-white hover:from-purple-strong hover:to-purple-ligth
 }
 
 .btn.secondary {
- @apply bg-secondary-100 text-white active:bg-secondary-200
-}
-
-.btn.warning {
- @apply bg-warning-100 text-white active:bg-warning-200
-}
-
-.btn.alert {
- @apply bg-alert-100 text-white active:bg-alert-200
-}
-
-.btn.info {
- @apply bg-info-100 text-white active:bg-info-200
-}
-
-.btn.danger {
- @apply bg-danger-100 text-white active:bg-danger-200
+ @apply bg-gradient-to-r text-purple-strong bg-white
 }
