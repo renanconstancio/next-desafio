@@ -1,9 +1,21 @@
 .input {
-  @apply bg-white rounded-3xl overflow-hidden border
+  @apply bg-white rounded-3xl overflow-hidden border relative
 }
 .input input {
   @apply bg-transparent outline-none border-none h-full py-3 px-6
 }
+
+.input input + datalist,
+.input input + datalist > option {
+  background-color: #fff;
+}
+
+.input input + datalist {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+}
+
 
 .input.active {
   @apply transition-colors ease-in-out delay-150 border-purple-strong

@@ -15,34 +15,26 @@ type ListItems = {
 export default function GridProducts({ listItems }: ListItems) {
   return (
     <>
-      <section className="bg-white rounded-3xl p-7">
-        <table className="table-auto w-full">
-          <thead>
-            <tr>
-              <th className="text-start">Titulo</th>
-              <th className="text-center">Caegoria</th>
-              <th className="text-center">Preço</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-              <td className="text-center">Malcolm Lockyer</td>
-              <td className="text-center">1961</td>
-            </tr>
-            <tr>
-              <td>Witchy Woman</td>
-              <td className="text-center">The Eagles</td>
-              <td className="text-center">1972</td>
-            </tr>
-            <tr>
-              <td>Shining Star</td>
+      <table className="table-auto w-full">
+        <thead>
+          <tr>
+            <th className="text-start">Titulo</th>
+            <th className="text-center">Categoria</th>
+            <th className="text-center">Preço</th>
+          </tr>
+        </thead>
+        <tbody>
+          {listItems?.map((item, k) => (
+            <tr key={k}>
+              <td>{item.title}</td>
               <td className="text-center">Earth, Wind, and Fire</td>
-              <td className="text-center">1975</td>
+              <td className="text-center">R$ {maskPrice(item.price)}</td>
             </tr>
-          </tbody>
-        </table>
-      </section>
+          ))}
+        </tbody>
+      </table>
+      {/* <section className="bg-white rounded-3xl p-7">
+      </section> */}
       {/*
       <ul className="flex flex-col">
         {listItems?.map((item, k) => (
@@ -62,7 +54,6 @@ export default function GridProducts({ listItems }: ListItems) {
                 </aside>
                 <aside>
                   <PriceOf price="" />
-
                   <SalePrice price={`Por ${maskPrice(item.price)}`} />
                 </aside>
               </article>
