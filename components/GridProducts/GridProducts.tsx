@@ -15,20 +15,26 @@ type ListItems = {
 export default function GridProducts({ listItems }: ListItems) {
   return (
     <>
-      <table className="table-auto w-full">
+      <table className="table-auto border-collapse w-full">
         <thead>
           <tr>
-            <th className="text-start">Titulo</th>
-            <th className="text-center">Categoria</th>
-            <th className="text-center">Preço</th>
+            <th className="p-3 border-b border-slate-300 text-start">Titulo</th>
+            <th className="p-3 border-b border-slate-300 text-center">
+              Categoria
+            </th>
+            <th className="p-3 border-b border-slate-300 text-center">Preço</th>
           </tr>
         </thead>
         <tbody>
           {listItems?.map((item, k) => (
             <tr key={k}>
-              <td>{item.title}</td>
-              <td className="text-center">Earth, Wind, and Fire</td>
-              <td className="text-center">R$ {maskPrice(item.price)}</td>
+              <td className="p-3 border-b border-slate-300">{item.title}</td>
+              <td className="p-3 border-b border-slate-300 text-center  w-auto">
+                Earth, Wind, and Fire
+              </td>
+              <td className="p-3 border-b border-slate-300 text-center w-auto">
+                {maskPrice(item.price)}
+              </td>
             </tr>
           ))}
         </tbody>
