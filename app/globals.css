@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  input {
+    width: 100%;
+    outline: none;
+    height: auto;
+  }
+
+  body {
+    font-family: var(--font-lato);
+  }
+
+  .font-100 {
+    font-family: var(--font-lato);
+    font-weight: 100;
+  }
+
+  .font-900 {
+    font-family: var(--font-lato);
+    font-weight: 900;
+  }
+
+  .form-search {
+    @apply flex justify-between items-center border-solid border-red-300 transition-colors border-[1px] rounded-md overflow-hidden p-1;
+  }
+
+  .form-search.active{
+    @apply hover:duration-500 border-red-300;
+  }
+
+  .icon-svg-animated {
+    @apply fill-red-600 transition-colors hover:duration-200 hover:fill-red-300 w-7 cursor-pointer
+  }
+
+}
