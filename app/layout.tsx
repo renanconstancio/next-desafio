@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 
-import Script from "next/script";
+// import Script from "next/script";
 
 export const metadata = {
   title: "Sistema Web",
@@ -23,6 +23,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br" className={[overpass.variable].join(" ")}>
+      <head>
+        <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+      </head>
       <body>
         <SearchProvider>{children}</SearchProvider>
         {/* <div className="enabled">
