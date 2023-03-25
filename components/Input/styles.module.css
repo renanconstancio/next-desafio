@@ -5,18 +5,27 @@
   @apply bg-transparent outline-none border-none h-full py-3 px-6
 }
 
-.input input + datalist,
-.input input + datalist > option {
-  background-color: #fff;
-}
-
 .input input + datalist {
   position: absolute;
-  top: 100%;
-  width: 100%;
+  max-height: 20em;
+  border: 0 none;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
+.input input + datalist > option {
+  font-size: 0.8em;
+  padding: 0.3em 1em;
+  background-color: #ccc;
+  cursor: pointer;
+}
 
 .input.active {
   @apply transition-colors ease-in-out delay-150 border-purple-strong
+}
+
+.input.active input + datalist {
+  color: #fff;
+  background-color: #036;
+  outline: 0 none;
 }

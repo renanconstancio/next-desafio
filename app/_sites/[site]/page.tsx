@@ -5,14 +5,27 @@ import { Input } from "@components/Input";
 import type { Products } from "../../../types/products";
 
 async function getProducts(): Promise<Products[]> {
-  const resp = await fetch("http://localhost:3000/api/products");
+  const resp = await fetch("https://fakestoreapi.com/products");
   return resp.json();
 }
 
 export default async function PageSubHome() {
+  const productsFiltred: Products[] = [];
   const products = await getProducts();
 
-  const filterProducts = [];
+  const categoriesProducts: { value: string }[] = products
+    .map((p) => p.category)
+    .filter((category, index, arr) => arr.indexOf(category) == index)
+    .map((cat) => ({ value: cat }));
+
+  function handleFilterCategory(str: string) {
+    // productsFiltred.push();
+    //   console.log(
+    //     products.filter(
+    //       (item) => item.category.toLowerCase().indexOf(str.toLowerCase()) !== -1,
+    //     ),
+    //   );
+  }
 
   return (
     <>
@@ -26,10 +39,11 @@ export default async function PageSubHome() {
             />
 
             <Input
-              type="text"
+              type="search"
               placeholder="Pesquisa por categorias"
-              dataList={{ id: "list", data: [{ value: "teste" }] }}
-              name="combobox"
+              dataList={{ id: "list", data: categoriesProducts }}
+              name="categories"
+              // onChange={(e) => console.log(e.target.value)}
               className="mr-5 basis-1/4"
             />
 

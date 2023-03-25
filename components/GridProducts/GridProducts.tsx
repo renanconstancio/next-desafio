@@ -29,8 +29,8 @@ export default function GridProducts({ listItems }: ListItems) {
           {listItems?.map((item, k) => (
             <tr key={k}>
               <td className="p-3 border-b border-slate-300">{item.title}</td>
-              <td className="p-3 border-b border-slate-300 text-center  w-auto">
-                Earth, Wind, and Fire
+              <td className="p-3 border-b border-slate-300 text-center w-auto">
+                {item.category}
               </td>
               <td className="p-3 border-b border-slate-300 text-center w-auto">
                 {maskPrice(item.price)}
