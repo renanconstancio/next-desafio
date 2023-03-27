@@ -1,0 +1,14 @@
+.select {
+  @apply bg-white rounded-3xl overflow-hidden border relative
+}
+
+.select select {
+  @apply bg-transparent outline-none border-none h-full w-full py-3 px-6
+}
+
+
+.select.active {
+  @apply transition-colors ease-in-out delay-150 border-purple-strong
+}
+
+
