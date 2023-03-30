@@ -1,5 +1,6 @@
-import { Search } from "@components/Search";
 import { GridProducts } from "@components/GridProducts";
+import { Search } from "@components/Search";
+
 import type { Products } from "../../../types/products";
 
 export const revalidate = 5 * 60;
@@ -21,28 +22,44 @@ async function getProducts(): Promise<Products[]> {
 export default async function SubHomePage({ searchParams }: Props) {
   const products = await getProducts();
 
-  const productsSearch = products.filter(
-    (item) =>
+  const resolvePriceDescOrAsc = (a: Products, b: Products) => {
+    if (searchParams?.search_price === "asc") return a.price > b.price ? 1 : -1;
+
+    if (searchParams?.search_price === "desc")
+      return a.price > b.price ? -1 : 1;
+
+    return 0;
+  };
+
+  const resolveSearchString = (item: Products) => {
+    return (
       item.title
         .toLowerCase()
-        .indexOf(String(searchParams?.search_title).toLowerCase()) !== -1 &&
+        .indexOf(String(searchParams?.search_title).toLowerCase()) !== -1
+    );
+  };
+
+  const resolveSearchCategory = (item: Products) => {
+    return (
       item.category
         .toLowerCase()
-        .indexOf(String(searchParams?.search_category).toLowerCase()) !== -1,
-  );
-  // .sort((a: Products, b: Products) => {
-  //   if (String(searchParams?.search_category) === "asc")
-  //     return a.price - b.price;
-  // });
+        .indexOf(String(searchParams?.search_category).toLowerCase()) !== -1
+    );
+  };
+
+  const productsSearch = products
+    .sort(resolvePriceDescOrAsc)
+    .filter(resolveSearchString)
+    .filter(resolveSearchCategory);
 
   const categories = products
-    ?.map((p) => p.category)
+    .map((p) => p.category)
     .filter((category, index, arr) => arr.indexOf(category) == index)
     .map((cat) => ({ value: cat }));
 
   return (
     <>
-      <section className="container max-w-screen-lg p-4">
+      <section className="container max-w-screen-xl p-4">
         <div className="bg-white rounded-3xl p-8">
           <Search categories={categories} />
 

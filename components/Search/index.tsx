@@ -3,7 +3,7 @@
 import { Input } from "@components/Input";
 import { Select } from "@components/Select";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { KeyboardEvent, useEffect, useState } from "react";
 
 import IconSearch from "/public/icons-svg/search.svg";
 
@@ -14,31 +14,33 @@ type Props = {
 export function Search({ categories }: Props) {
   const route = useRouter();
 
-  const [searchText, setSearchText] = useState("");
+  const [searchString, setSearchText] = useState("");
   const [searchCategory, setSearchCategory] = useState("");
   const [searchChangePrice, setSearchChangePrice] = useState("");
   const [handlePressEnter, setHandlePressEnter] = useState(false);
 
-  const pressKeyEnterSearch = (e: any) => {
+  const pressKeyEnterSearch = (e: KeyboardEvent<HTMLInputElement>) => {
     if (
       e.key === "Enter" &&
-      (searchText.length > 2 || searchCategory.length > 2)
+      (searchString.length > 2 || searchCategory.length > 2)
     )
       setHandlePressEnter(true);
-  };
-
-  const handleChangeSearch = (str: string) => {
-    setSearchChangePrice(str);
   };
 
   useEffect(() => {
     if (handlePressEnter || searchChangePrice) {
       setHandlePressEnter(false);
       route.push(
-        `?search_title=${searchText}&search_category=${searchCategory}&search_price=${searchChangePrice}`,
+        `?search_title=${searchString}&search_category=${searchCategory}&search_price=${searchChangePrice}`,
       );
     }
-  }, [route, handlePressEnter, searchChangePrice, searchText, searchCategory]);
+  }, [
+    route,
+    handlePressEnter,
+    searchChangePrice,
+    searchString,
+    searchCategory,
+  ]);
 
   return (
     <form className="flex mb-5">
@@ -67,10 +69,10 @@ export function Search({ categories }: Props) {
         options={[
           { id: "all", value: "Todos" },
           { id: "asc", value: "Menor Preço" },
-          { id: "dec", value: "Maior Preço" },
+          { id: "desc", value: "Maior Preço" },
         ]}
         className="mr-5 basis-1/4"
-        onChange={(e) => handleChangeSearch(e.currentTarget.value)}
+        onChange={(e) => setSearchChangePrice(e.currentTarget.value)}
       />
 
       <IconSearch
