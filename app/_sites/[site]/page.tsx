@@ -21,20 +21,19 @@ async function getProducts(): Promise<Products[]> {
 export default async function SubHomePage({ searchParams }: Props) {
   const products = await getProducts();
 
-  const productsSearch = products
-    .filter(
-      (item) =>
-        item.title
-          .toLowerCase()
-          .indexOf(String(searchParams?.search_title).toLowerCase()) !== -1 &&
-        item.category
-          .toLowerCase()
-          .indexOf(String(searchParams?.search_category).toLowerCase()) !== -1,
-    )
-    .sort((a, b) => {
-      if (String(searchParams?.search_category) === "asc")
-        return a.price - b.price;
-    });
+  const productsSearch = products.filter(
+    (item) =>
+      item.title
+        .toLowerCase()
+        .indexOf(String(searchParams?.search_title).toLowerCase()) !== -1 &&
+      item.category
+        .toLowerCase()
+        .indexOf(String(searchParams?.search_category).toLowerCase()) !== -1,
+  );
+  // .sort((a: Products, b: Products) => {
+  //   if (String(searchParams?.search_category) === "asc")
+  //     return a.price - b.price;
+  // });
 
   const categories = products
     ?.map((p) => p.category)
@@ -43,8 +42,8 @@ export default async function SubHomePage({ searchParams }: Props) {
 
   return (
     <>
-      <section className="container px-4 md:px-0 pb-12 pt-12">
-        <div className="bg-white rounded-3xl p-7">
+      <section className="container max-w-screen-lg p-4">
+        <div className="bg-white rounded-3xl p-8">
           <Search categories={categories} />
 
           <GridProducts

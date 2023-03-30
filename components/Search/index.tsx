@@ -33,10 +33,10 @@ export function Search({ categories }: Props) {
 
   useEffect(() => {
     if (handlePressEnter || searchChangePrice) {
+      setHandlePressEnter(false);
       route.push(
         `?search_title=${searchText}&search_category=${searchCategory}&search_price=${searchChangePrice}`,
       );
-      setHandlePressEnter(false);
     }
   }, [route, handlePressEnter, searchChangePrice, searchText, searchCategory]);
 
