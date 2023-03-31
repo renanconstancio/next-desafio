@@ -15,21 +15,11 @@
     @apply bg-gray-ligth text-gray-regular
   }
 
-  .font-100 {
-    font-family: var(--font-overpass);
-    font-weight: 100;
-  }
-
-  .font-900 {
-    font-family: var(--font-overpass);
-    font-weight: 900;
-  }
-
   .form-search {
     @apply flex justify-between items-center border-solid border-red-300 transition-colors border-[1px] rounded-md overflow-hidden p-1;
   }
 
-  .form-search.active{
+  .form-search.active {
     @apply hover:duration-500 border-red-300;
   }
 
