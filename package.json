@@ -18,12 +18,14 @@
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "tiny-slider-react": "^0.5.7",
     "typescript": "5.0.2"
   },
   "devDependencies": {
     "@svgr/webpack": "^6.5.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
+    "@types/tiny-slider-react": "^0.3.4",
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
     "autoprefixer": "^10.4.14",

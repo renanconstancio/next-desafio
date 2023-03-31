@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -9,7 +10,7 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ['images.unsplash.com'],
+    domains: ['images.unsplash.com', 'fakestoreapi.com'],
   },
   experimental: {
     appDir: true,
