@@ -12,35 +12,25 @@ type Props = {
 };
 
 export function Search({ categories }: Props) {
-  const route = useRouter();
+  const { push } = useRouter();
 
-  const [searchString, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState("");
   const [searchCategory, setSearchCategory] = useState("");
-  const [searchChangePrice, setSearchChangePrice] = useState("");
-  const [handlePressEnter, setHandlePressEnter] = useState(false);
+  const [searchPrice, setSearchPrice] = useState("");
+  const [pressEnter, setPressEnter] = useState(false);
 
   const pressKeyEnterSearch = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (
-      e.key === "Enter" &&
-      (searchString.length > 2 || searchCategory.length > 2)
-    )
-      setHandlePressEnter(true);
+    if (e.key === "Enter" && searchText.length > 2) setPressEnter(true);
   };
 
   useEffect(() => {
-    if (handlePressEnter || searchChangePrice) {
-      setHandlePressEnter(false);
-      route.push(
-        `?search_title=${searchString}&search_category=${searchCategory}&search_price=${searchChangePrice}`,
+    if (pressEnter || searchPrice) {
+      setPressEnter(false);
+      push(
+        `?search_title=${searchText}&search_category=${searchCategory}&search_price=${searchPrice}`,
       );
     }
-  }, [
-    route,
-    handlePressEnter,
-    searchChangePrice,
-    searchString,
-    searchCategory,
-  ]);
+  }, [pressEnter, searchPrice]);
 
   return (
     <form className="flex mb-5">
@@ -72,12 +62,12 @@ export function Search({ categories }: Props) {
           { id: "desc", value: "Maior Preço" },
         ]}
         className="mr-5 basis-1/4"
-        onChange={(e) => setSearchChangePrice(e.currentTarget.value)}
+        onChange={(e) => setSearchPrice(e.currentTarget.value)}
       />
 
       <IconSearch
         className="fill-purple-strong cursor-pointer w-5"
-        onClick={() => setHandlePressEnter(true)}
+        onClick={() => setPressEnter(true)}
       />
     </form>
   );

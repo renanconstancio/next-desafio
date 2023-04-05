@@ -53,7 +53,7 @@ export default async function SubHomePage({ searchParams }: Props) {
     .filter(resolveSearchCategory);
 
   const categories = products
-    .map((p) => p.category)
+    ?.map((p) => p.category)
     .filter((category, index, arr) => arr.indexOf(category) == index)
     .map((cat) => ({ value: cat }));
 
